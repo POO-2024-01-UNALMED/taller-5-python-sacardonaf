@@ -1,28 +1,24 @@
-
+import zooAnimales
 
 class Animal:
     _totalAnimales=0
-    ave=[]
-    mamifero=[]
-    pez=[]
-    reptil=[]
-    anfibio=[]
-    def __init__(self, nombre, edad, habitat, genero, zona=None):
+    def __init__(self, nombre, edad, habitat, genero):
         self._nombre=nombre
         self._edad=edad
         self._habitat=habitat
         self._genero=genero
-        self._zona=zona
+        self._zona=None
         Animal._totalAnimales+=1
-    def movimiento():
+    def movimiento(self):
         return "desplazarse"
-    def totalPorTipo():
-        return (f"Mamiferos : {len(Animal.mamifero)}\nAves : {len(Animal.ave)}\nReptiles : {len(Animal.reptil)}\nPeces : {len(Animal.pez)}\nAnfibios : {len(Animal.anfibio)}")
+    @classmethod
+    def totalPorTipo(cls):
+        return (f"Mamiferos : {zooAnimales.mamifero.Mamifero.cantidadMamiferos()}\nAves : {zooAnimales.ave.Ave.cantidadAves()}\nReptiles : {zooAnimales.reptil.Reptil.cantidadReptiles()}\nPeces : {zooAnimales.pez.Pez.cantidadPeces()}\nAnfibios : {zooAnimales.anfibio.Anfibio.cantidadAnfibio()}")
     def toString(self):
         if self._zona==None:
             return (f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi genero es {self._genero}")
         else:
-            return (f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi genero es {self._genero}, la zona en la que me ubico es {self._zona}, en el {self._zona.self._zoo}")
+            return (f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi genero es {self._genero}, la zona en la que me ubico es {self._zona.getNombre()}, en el {self._zona.getZoo().getNombre()}")
     def getNombre(self):
         return self._nombre
     def setNombre(self,nombre):
@@ -42,7 +38,10 @@ class Animal:
     def getZona(self):
         return self._zona
     def setZona(self,zona):
-        if(self._zona==None):
-            self._zona=[zona]
-        else:
-            self._zona.append(zona)
+        self._zona=zona
+    @classmethod
+    def getTotalAnimales(cls):
+        return cls._totalAnimales
+    @classmethod
+    def setTotalAnimales(cls,total):
+        cls._totalAnimales=total

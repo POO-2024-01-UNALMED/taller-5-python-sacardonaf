@@ -16,9 +16,9 @@ class Animal:
         Animal._totalAnimales+=1
     def movimiento():
         return "desplazarse"
-    def totalPorTipo(self):
-        return (f"Mamiferos:{len(self.mamifero)}\nAves:{len(self.ave)}\nReptiles:{len(self.reptil)}\nPeces:{len(self.pez)}\nAnfibios:{len(self.anfibio)}")
-    def __str__(self):
+    def totalPorTipo():
+        return (f"Mamiferos : {len(Animal.mamifero)}\nAves : {len(Animal.ave)}\nReptiles : {len(Animal.reptil)}\nPeces : {len(Animal.pez)}\nAnfibios : {len(Animal.anfibio)}")
+    def toString(self):
         if self._zona==None:
             return (f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi genero es {self._genero}")
         else:

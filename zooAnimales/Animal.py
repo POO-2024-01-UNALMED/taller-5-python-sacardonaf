@@ -1,12 +1,12 @@
-from zooAnimales.mamifero import Mamifero
-from zooAnimales.ave import Ave
-from zooAnimales.reptil import Reptil
-from zooAnimales.pez import Pez
-from zooAnimales.anfibio import Anfibio
-from gestion.zona import Zona
+
 
 class Animal:
     _totalAnimales=0
+    ave=[]
+    mamifero=[]
+    pez=[]
+    reptil=[]
+    anfibio=[]
     def __init__(self, nombre, edad, habitat, genero, zona=None):
         self._nombre=nombre
         self._edad=edad
@@ -16,8 +16,8 @@ class Animal:
         Animal._totalAnimales+=1
     def movimiento():
         return "desplazarse"
-    def totalPorTipo(cls):
-        return (f"Mamiferos:{Mamifero.len(cls._listado)}\nAves:{Ave.len(cls._listado)}\nReptiles:{Reptil.len(cls._listado)}\nPeces:{Pez.len(cls._listado)}\nAnfibios:{Anfibio.len(cls._listado)}")
+    def totalPorTipo(self):
+        return (f"Mamiferos:{len(self.mamifero)}\nAves:{len(self.ave)}\nReptiles:{len(self.reptil)}\nPeces:{len(self.pez)}\nAnfibios:{len(self.anfibio)}")
     def __str__(self):
         if self._zona==None:
             return (f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi genero es {self._genero}")
@@ -42,4 +42,7 @@ class Animal:
     def getZona(self):
         return self._zona
     def setZona(self,zona):
-        self._zona=zona
+        if(self._zona==None):
+            self._zona=[zona]
+        else:
+            self._zona.append(zona)

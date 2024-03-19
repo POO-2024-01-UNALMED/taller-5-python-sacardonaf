@@ -10,7 +10,7 @@ class Ave(Animal):
 
     @classmethod
     def cantidadAves(cls):
-        return len(cls._listado)
+        return len(Ave._listado)
     def movimiento(self):
         return "volar"
     @classmethod
@@ -29,7 +29,7 @@ class Ave(Animal):
         self._colorPlumas=colorPlumas
     @classmethod
     def getListado(cls):
-        return cls._listado
+        return Ave._listado
     @classmethod
     def setListado(cls,listado):
-        cls._listado=listado
+        Ave._listado=listado

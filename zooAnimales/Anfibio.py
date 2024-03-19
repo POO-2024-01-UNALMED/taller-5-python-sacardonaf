@@ -11,7 +11,7 @@ class Anfibio(Animal):
 
     @classmethod
     def cantidadAnfibios(cls):
-        return len(cls._listado)
+        return len(Anfibio._listado)
     def movimiento(self):
         return "saltar"
     @classmethod
@@ -26,10 +26,10 @@ class Anfibio(Animal):
         return salamandra
     @classmethod
     def getListado(cls):
-        return cls._listado
+        return Anfibio._listado
     @classmethod
     def setListado(cls,listado):
-        cls._listado=listado
+        Anfibio._listado=listado
     def getColorPiel(self):
         return self._colorPiel
     def setColorPiel(self,colorPiel):

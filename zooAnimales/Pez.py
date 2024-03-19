@@ -11,7 +11,7 @@ class Pez(Animal):
 
     @classmethod
     def cantidadPeces(cls):
-        return len(cls._listado)
+        return len(Pez._listado)
     def movimiento(self):
         return "nadar"
     @classmethod
@@ -26,10 +26,10 @@ class Pez(Animal):
         return bacalao
     @classmethod
     def getListado(cls):
-        return cls._listado
+        return Pez._listado
     @classmethod
     def setListado(cls,listado):
-        cls._listado=listado
+        Pez._listado=listado
     def getColorEscamas(self):
         return self._colorEscamas
     def setColorEscamas(self,colorEscamas):
